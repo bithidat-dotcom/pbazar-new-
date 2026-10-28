@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>P-Bazar</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #fff; }
+        iframe { width: 100vw; height: 100vh; border: none; display: block; }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper"></div>
+
+    <script>
+        // Encrypted URL string (Base64)
+        // 'aHR0cHM6Ly9wYmF6YXIuc2hvcA==' means 'https://pbazar.shop'
+        var _0x1a = "aHR0cHM6Ly9wYmF6YXIuc2hvcA=="; 
+
+        window.onload = function() {
+            var decodedUrl = atob(_0x1a);
+            var frame = document.createElement('iframe');
+            frame.setAttribute('src', decodedUrl);
+            frame.setAttribute('allow', 'fullscreen; payment; geolocation');
+            document.getElementById('wrapper').appendChild(frame);
+        };
+
+        // Disable Right Click & Ctrl+U Shortcuts
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) return false; // F12
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false; // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false; // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false; // Ctrl+Shift+J
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Ctrl+U
+        };
+    </script>
+</body>
+</html>

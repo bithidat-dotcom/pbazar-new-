@@ -1,0 +1,12 @@
+{
+  "name": "P-Bazar",
+  "description": "P-Bazar - Online Grocery & Superstore",
+  "requestFramePermissions": [
+    "fullscreen",
+    "payment",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
